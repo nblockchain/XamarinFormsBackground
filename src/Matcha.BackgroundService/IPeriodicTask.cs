@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Matcha.BackgroundService
 {
-    public interface IPeriodicTask
+    public interface IBackgroundTask
     {
-        TimeSpan Interval { get; }
-        Task<bool> StartJob();
+        Task StartJob();
     }
 }

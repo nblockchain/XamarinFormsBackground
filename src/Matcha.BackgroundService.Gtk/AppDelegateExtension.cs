@@ -17,9 +17,6 @@ namespace Matcha.BackgroundService.Gtk
         {
             MessagingCenter.Subscribe<StartLongRunningTask>(ObjBackgroundGtkObject, nameof(StartLongRunningTask),
                 message => { MatchaBackgroundSharedService.Instance.Start(); });
-
-            MessagingCenter.Subscribe<StopLongRunningTask>(ObjBackgroundGtkObject, nameof(StopLongRunningTask),
-                message => { MatchaBackgroundSharedService.Instance.Stop(); });
         }
     }
 }

@@ -21,9 +21,6 @@ namespace Matcha.BackgroundService.Mac
         {
             MessagingCenter.Subscribe<StartLongRunningTask>(appDelegate, nameof(StartLongRunningTask),
                 message => { MatchaBackgroundSharedService.Instance.Start(); });
-
-            MessagingCenter.Subscribe<StopLongRunningTask>(appDelegate, nameof(StopLongRunningTask),
-                message => { MatchaBackgroundSharedService.Instance.Stop(); });
         }
     }
 }

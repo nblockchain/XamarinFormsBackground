@@ -29,10 +29,7 @@ namespace Matcha.BackgroundService.Droid
 
         public override void OnDestroy()
         {
-            _isRunning = false;
-            BackgroundAggregatorService.Instance.Stop();
-
-            base.OnDestroy();
+            // when would this happen?
         }
     }
 }

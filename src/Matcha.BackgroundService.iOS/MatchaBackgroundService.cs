@@ -37,14 +37,8 @@ namespace Matcha.BackgroundService.iOS
             _isRunning = true;
         }
 
-        /// <summary>
-        /// Stop the execution of background service
-        /// </summary>
         public void Stop()
         {
-            _isRunning = false;
-            BackgroundAggregatorService.Instance.Stop();
-            UIApplication.SharedApplication.EndBackgroundTask(_taskId);
         }
     }
 }
