@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata minClientVersion="2.8.1">
-        <id>Matcha.BackgroundService</id>
-        <version>1.0.5465</version>
+        <id>Xamarin.Forms.Background</id>
+        <version>0.0.1</version>
         <title>A plugin library to simplify Backgrounding in Xamarin.Forms.</title>
         <authors>Winston Gubantes</authors>
-        <owners>Matcha</owners>
-        <licenseUrl>https://github.com/winstongubantes/MatchaBackgroundService/blob/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/winstongubantes/MatchaBackgroundService</projectUrl>
+        <owners>knocte</owners>
+        <licenseUrl>https://github.com/nblockchain/XamarinFormsBackground/blob/master/LICENSE.md</licenseUrl>
+        <projectUrl>https://github.com/nblockchain/XamarinFormsBackground/</projectUrl>
         <iconUrl>https://github.com/winstongubantes/MatchaBackgroundService/blob/master/images/icon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>
-            Ever wonder how facebook and twitter process there background to fetch a new content? It is not hard but you have to deal with each platform functionality, It is not generic and simple.
+            BackgroundWorker abstraction that maps to native APIs for all platforms supported by Xamarin.Forms
         </description>
         <releaseNotes>
-            See: https://github.com/winstongubantes/MatchaBackgroundService/blob/master/CHANGELOG.md
+            https://github.com/nblockchain/XamarinFormsBackground/commits/master
         </releaseNotes>
         <summary>A plugin library to simplify Backgrounding in Xamarin.Forms.</summary>
         <tags>xamarin, android, ios, backgroundservice</tags>
