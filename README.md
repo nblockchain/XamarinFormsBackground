@@ -1,4 +1,4 @@
-# Matcha Background Service Plugin for Xamarin.Forms
+# Xamarin.Forms.Background (Background plugin for Xamarin.Forms)
 
 A plugin library to simplify Backgrounding in Xamarin.Forms. 
  
@@ -7,19 +7,19 @@ A plugin library to simplify Backgrounding in Xamarin.Forms.
  
 Ever wonder how facebook and twitter process there background to fetch a new content? And it looks so slick that when you refresh it was snappy and smooth, Making the user believed that the content is refreshed and updated in a snap when in fact it was done in the background. 
 
-The secret behind it was the background service. And so we have created Matcha.BackgroundService to make our backgrounding task be simple and maintenable.
+The secret behind it was the background service. And so we have created Xamarin.Forms.Background to make our backgrounding task be simple and maintenable.
 
 ## Build & Test Status
 
-* [![Build status](https://winstongubantes.visualstudio.com/MatchaBackgroundService/_apis/build/status/MatchaBackgroundService-CI)](https://winstongubantes.visualstudio.com/MatchaBackgroundService/_build/latest?definitionId=3)
+* [![Build status](https://dev.azure.com/diginex/Xamarin.Forms.Background/_apis/build/status/master)](https://dev.azure.com/diginex/Xamarin.Forms.Background/_build?definitionId=5)
 
 ## Setup
 
-* NuGet: [Matcha.BackgroundService](http://www.nuget.org/packages/Matcha.BackgroundService) [![NuGet](https://img.shields.io/nuget/v/Matcha.BackgroundService.svg?label=NuGet)](https://www.nuget.org/packages/Matcha.BackgroundService/)
-* `PM> Install-Package Matcha.BackgroundService`
-* Install into ALL of your projects, include client projects.
- 
- ## For Android
+* NuGet: [Xamarin.Forms.Background](https://www.nuget.org/packages/Xamarin.Forms.Background) [![NuGet](https://img.shields.io/nuget/v/Xamarin.Forms.Background.svg?label=NuGet)](https://www.nuget.org/packages/Xamarin.Forms.Background/)
+* Install into ALL of your projects, including client projects.
+* Initialize `BackgroundAggregator` in each platform project.
+
+### For Android
 You call the "Init" method before all libraries initialization in MainActivity class.
 
 ```csharp
@@ -35,7 +35,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 }
 ```
  
-## For iOS
+### For iOS
  
 You call the "Init" method before all libraries initialization in FinishedLaunching method in FormsApplicationDelegate class.
  
@@ -52,8 +52,8 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 }
 ```
 
-## For Mac
- 
+### For macOS
+
 You call the "Init" method before all libraries initialization in DidFinishLaunching method in FormsApplicationDelegate class.
  
 ```csharp
@@ -69,7 +69,7 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.MacOS.FormsApp
 }
 ```
 
-## For Tizen
+### For Tizen
  
 You call the "Init" method before all libraries initialization in OnCreate method in FormsApplication class.
  
@@ -92,7 +92,7 @@ class Program : global::Xamarin.Forms.Platform.Tizen.FormsApplication
 }
 ```
 
-## For Gtk
+### For Gtk
  
 You call the "Init" method before all libraries initialization in Main method in MainClass class.
  
@@ -118,7 +118,7 @@ class MainClass
 }
 ```
 
-## For UWP
+### For UWP
  
 First, You call the "Init" method before all libraries initialization in MainPage class.
  
@@ -146,55 +146,42 @@ protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 }
 ```
 
-## Create Periodic Task
+## Create Background Task
  
-You will have to inherit IPeriodicTask interface in which you will supply and implement the interval and StartJob, Periodic Task will be execute every interval once it is registered.
+You will have to inherit IBackgroundTask interface in which you will supply and implement the interval and StartJob.
  
 ```csharp
-public class PeriodicWebCall : IPeriodicTask
+public class SomeBackgroundWork : IBackgroundTask
 {
-    public PeriodicWebCallTest(int seconds)
+    public SomeBackgroundWork()
     {
-        Interval = TimeSpan.FromSeconds(seconds);
     }
 
-    public TimeSpan Interval { get; set; }
-
-    public Task<bool> StartJob()
+    public Task StartJob()
     {
         // YOUR CODE HERE
-        // THIS CODE WILL BE EXECUTE EVERY INTERVAL
-        return true; //return false when you want to stop or trigger only once
+
+        return;
     }
 }
 ```
 
-## Register Periodic Task
+## Register Background Task
  
-After you have implemented the Periodic Task you will need to register it to Background Aggregator Service,  We define it on OnStart() method under App.cs.
- 
+After you have implemented the Background Task you will need to register it to Background Aggregator Service.  We define it on OnStart() method under App.cs.
+
 ```csharp
 protected override void OnStart()
 {
-    //Register Periodic Tasks
-    BackgroundAggregatorService.Add(() => new PeriodicWebCall(3));
-    BackgroundAggregatorService.Add(() => new PeriodicCall2(4));
+    //Register Background Tasks
+    BackgroundAggregatorService.Add(() => new SomeBackgroundWork());
+    BackgroundAggregatorService.Add(() => new OtherBackgroundWork());
 
     //Start the background service
     BackgroundAggregatorService.StartBackgroundService();
 }
 ```
 
-## Stop Periodic Task
- 
-We can stop the Periodic Task anytime by calling StopBackgroundService method, on our sample we place it on OnSleep() method under App.cs.
- 
-```csharp
-protected override void OnSleep()
-{
-    BackgroundAggregatorService.StopBackgroundService();
-}
-```
 
 ## Quirks and Limitation
  
@@ -214,11 +201,11 @@ For more info about Backgrounding in UWP please check the link [HERE](https://do
 
 ## That's it
  
-You can now run your app that runs a Periodic Task every interval in the Background Service.  We have provided a few good samples to for you to dig in.
+You can now run your app that runs your Background Tasks in the Background Service.  We have provided a few good samples to for you to dig in.
 
 ## Our Sample
 
-We have created a sample app that has 3 Periodic Task in the background that gets an RSS feed from news outlet like BBC News, CNN News and Washington Post. It refreshes the data every 3 minutes.
+We have created a sample app that has 3 tasks in the background that get an RSS feed from news outlet like BBC News, CNN News and Washington Post.
 
 <img src="https://github.com/winstongubantes/MatchaBackgroundService/blob/master/images/newsfeed.gif" width="400" title="md">
 
