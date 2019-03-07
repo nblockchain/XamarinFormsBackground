@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Matcha.BackgroundService;
+using Xamarin.Forms.Background;
 using SampleBackground.Models;
 using SampleBackground.Services;
 using SampleBackground.ViewModels;

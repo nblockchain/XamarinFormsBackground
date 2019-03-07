@@ -1,8 +1,8 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Matcha.BackgroundService;
-using Matcha.BackgroundService.Droid;
+using Xamarin.Forms.Background;
+using Xamarin.Forms.Background.Android;
 using Prism;
 using Prism.Ioc;
 

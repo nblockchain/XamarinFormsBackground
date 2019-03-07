@@ -1,6 +1,6 @@
-﻿using Foundation;
-using Matcha.BackgroundService;
-using Matcha.BackgroundService.iOS;
+using Foundation;
+using Xamarin.Forms.Background;
+using Xamarin.Forms.Background.iOS;
 using Prism;
 using Prism.Ioc;
 using UIKit;

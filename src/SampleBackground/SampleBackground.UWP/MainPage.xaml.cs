@@ -14,8 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Matcha.BackgroundService;
-using Matcha.BackgroundService.UWP;
+using Xamarin.Forms.Background;
+using Xamarin.Forms.Background.UWP;
 
 namespace SampleBackground.UWP
 {

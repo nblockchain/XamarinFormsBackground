@@ -189,8 +189,8 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Matcha.BackgroundService">
-      <Version>1.0.5473</Version>
+    <PackageReference Include="Xamarin.Forms.Background">
+      <Version>0.9.10</Version>
     </PackageReference>
     <PackageReference Include="MonkeyCache.SQLite">
       <Version>0.1.0.10-beta</Version>

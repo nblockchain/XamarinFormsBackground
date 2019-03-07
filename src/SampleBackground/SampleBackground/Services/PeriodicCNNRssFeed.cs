@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Matcha.BackgroundService;
+using Xamarin.Forms.Background;
 
 namespace SampleBackground.Services
 {

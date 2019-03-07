@@ -4,14 +4,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Matcha.BackgroundService;
+using Xamarin.Forms.Background;
 using Microsoft.Toolkit.Parsers.Rss;
 using MonkeyCache.SQLite;
 using SampleBackground.Models;
 
 namespace SampleBackground.Services
 {
-    public abstract class BaseRssFeed : IPeriodicTask
+    public abstract class BaseRssFeed : IBackgroundTask
     {
         private readonly IRssParserService _parserService;
         private readonly string _url;
@@ -25,7 +25,7 @@ namespace SampleBackground.Services
 
         public TimeSpan Interval { get; set; }
 
-        public async Task<bool> StartJob()
+        public async Task StartJob()
         {
             var existingList = Barrel.Current.Get<List<RssData>>("NewsFeeds") ?? new List<RssData>();
 
@@ -62,8 +62,6 @@ namespace SampleBackground.Services
             }
 
             Barrel.Current.Add("NewsFeeds", existingList, TimeSpan.FromDays(30));
-
-            return true; //return false when you want to stop or trigger only once
         }
     }
 }
