@@ -7,8 +7,8 @@
     <ProjectGuid>{C94DCE52-01A2-4E8D-8F3C-445502C904E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Xamarin.Background.Gtk</RootNamespace>
-    <AssemblyName>Xamarin.Background.Gtk</AssemblyName>
+    <RootNamespace>Xamarin.Forms.Background.Gtk</RootNamespace>
+    <AssemblyName>Xamarin.Forms.Background.Gtk</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
