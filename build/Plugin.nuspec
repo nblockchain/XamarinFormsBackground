@@ -45,7 +45,7 @@
         <!--Xamarin.Mac-->
         <file src="..\src\Xamarin.Forms.Background.Mac\bin\Release\Xamarin.Forms.Background.*" target="lib\Xamarin.Mac20" />
         <!--UWP-->
-        <file src="..\src\Xamarin.Forms.Background.UWP\bin\Release\Xamarin.Forms.Background..*" target="lib\UAP10" />
+        <file src="..\src\Xamarin.Forms.Background.UWP\bin\Release\Xamarin.Forms.Background.*" target="lib\UAP10" />
         <!--Tizen-->
         <file src="..\src\Xamarin.Forms.Background.Tizen\bin\Release\tizen40\Xamarin.Forms.Background.*" target="lib\tizen40" />
         <!--GTK/net46-->
