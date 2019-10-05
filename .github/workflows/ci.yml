@@ -1,0 +1,14 @@
+name: ci
+on: push
+
+jobs:
+  build_and_deploy:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: |
+        build.bat
+    - name: Package and upload
+      run: |
+        nuget.bat ${{ secrets.NUGET_API_KEY }}

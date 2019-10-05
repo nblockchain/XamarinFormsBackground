@@ -11,7 +11,7 @@ The secret behind it was the background service. And so we have created Xamarin.
 
 ## Build & Test Status
 
-* [![Build status](https://dev.azure.com/diginex/Xamarin.Forms.Background/_apis/build/status/master)](https://dev.azure.com/diginex/Xamarin.Forms.Background/_build?definitionId=5)
+* [![Build status](https://github.com/nblockchain/XamarinFormsBackground/workflows/ci/badge.svg)](https://github.com/nblockchain/XamarinFormsBackground/actions)
 
 ## Setup
 
