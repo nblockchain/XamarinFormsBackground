@@ -7,6 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build
+      shell: cmd
       run: |
         build.bat
     - name: Package and upload
